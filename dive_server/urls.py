@@ -16,7 +16,15 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 
+from athlete.views import AthleteView
+from medal.views import MedalView
+from schedule.views import ScheduleView
+
+router = SimpleRouter()
 urlpatterns = [
-    #    path('admin/', admin.site.urls),
-]
+    path("athlete", AthleteView.as_view()),
+    path("schedule", ScheduleView.as_view()),
+    path("medal", MedalView.as_view())
+] + router.urls
