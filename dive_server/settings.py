@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
     'corsheaders',
-    'sslserver'
+    'sslserver',
     'athlete',
     'schedule',
     'medal'
