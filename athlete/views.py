@@ -19,10 +19,9 @@ class AthleteView(APIView):
     def put(self, request, *args, **kwargs):
         ResultId = request.data.get('ResultId')
         athlete = Athlete.objects.filter(ResultId=ResultId).first()
-        if athlete:
-            print(athlete.image)
+        if athlete and athlete.image:
             return Response(athlete.image)
-        return Response(None)
+        return Response(False)
 
     def _post(self, request, *args, **kwargs):
         raw_athletes = get_raw_athletes()
